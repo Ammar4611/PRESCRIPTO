@@ -36,9 +36,15 @@ app.use(cookieParser());
 
 connectDb();
 
+app.get('/', (req, res) => {
+  res.send('Server is running');
+});
+
+
 app.use('/auth',router)
 app.use('/appointments' , AppointmentRouter)
 
 
-
-app.listen(port, ()=>{console.log(`Server is running on port${port}`)})
+app.listen(port, '0.0.0.0', () => {
+  console.log(`Server is running on port ${port}`);
+});
