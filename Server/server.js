@@ -21,11 +21,16 @@ app.use(
 );
 
 
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://prescripto-project-ruby.vercel.app' // add your real frontend URL here
+];
 
 app.use(express.json());
+
 app.use(cors({
-    origin:'http://localhost:5173',
-    credentials: true,
+  origin: allowedOrigins,
+  credentials: true,
 }));
 app.use(cookieParser());
 
