@@ -9,7 +9,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import AppointmentRouter from './Routes/AppointmentsRoutes.js'
 
-const port= process.env.PORT
+const port= process.env.PORT || 5000;
 
 const app = express();
 const __dirname = path.resolve();
